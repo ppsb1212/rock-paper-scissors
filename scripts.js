@@ -4,6 +4,14 @@ let score = {
   ties: 0
 }
 
+document.querySelector('.js-rock').addEventListener('click',() =>{playGame('rock')});
+
+document.querySelector('.js-paper').addEventListener('click',() =>{playGame('paper')});
+
+document.querySelector('.js-scissors').addEventListener('click',() =>{playGame('scissors')});
+
+document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}  Ties: ${score.ties}  Looses: ${score.losses}`;
+
 function playGame(playerMove){
   computerMove = computerOption();
   console.log(computerMove);
@@ -53,17 +61,10 @@ function playGame(playerMove){
     }
   }
 
-  document.querySelector('.js-option').innerHTML = `You ${playerMove} : Computer ${computerMove}`;
-  document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}  Ties: ${score.ties}  Looses: ${score.losses}`;
-  }
+  document.querySelector('.js-option').innerHTML = `You <img src="images/${playerMove}.png"> : Computer <img src="images/${computerMove}.png">`;
   
-let result = document.querySelector('.js-result').innerHTML;
+  }
 
-document.querySelector('.js-rock').addEventListener('click',() =>{playGame('rock')});
-
-document.querySelector('.js-paper').addEventListener('click',() =>{playGame('paper')});
-
-document.querySelector('.js-scissors').addEventListener('click',() =>{playGame('scissors')});
 
 function computerOption(){
   let computerMove = '';

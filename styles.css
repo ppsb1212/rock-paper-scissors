@@ -1,0 +1,28 @@
+body{
+  background-color: rgb(39, 3, 3);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img{
+  height: 100px;
+  width: 100px;
+}
+
+button{
+  border: 5px solid white;
+  border-radius: 70px;
+  background-color: transparent;
+  padding: 10px;
+  margin-right: 20px;
+  }
+
+.result{
+  margin-top: 50px;
+  font-size: 30px;
+}
+
+.option, .score{
+  margin-top: 50px;
+  font-size: 25px;
+}
