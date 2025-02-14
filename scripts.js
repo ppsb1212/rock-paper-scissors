@@ -10,7 +10,20 @@ document.querySelector('.js-paper').addEventListener('click',() =>{playGame('pap
 
 document.querySelector('.js-scissors').addEventListener('click',() =>{playGame('scissors')});
 
-document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}  Ties: ${score.ties}  Looses: ${score.losses}`;
+document.querySelector('.js-reset').addEventListener('click',() =>{
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  document.querySelector('.js-option').innerHTML = '';
+  document.querySelector('.js-result').innerHTML = '';
+  showScore();
+})
+
+showScore();
+
+function showScore(){
+  document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}  Ties: ${score.ties}  Looses: ${score.losses}`;
+}
 
 function playGame(playerMove){
   computerMove = computerOption();
@@ -62,7 +75,7 @@ function playGame(playerMove){
   }
 
   document.querySelector('.js-option').innerHTML = `You <img src="images/${playerMove}.png"> : Computer <img src="images/${computerMove}.png">`;
-  
+  showScore();
   }
 
 
