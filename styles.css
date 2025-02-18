@@ -30,7 +30,7 @@ img{
   font-size: 25px;
 }
 
-.reset-button, .auto-button{
+.reset-button, .auto-play-button{
   border: 5px solid white;
   background-color: transparent;
   color: rgb(219, 219, 4);

@@ -4,6 +4,8 @@ let score = {
   ties: 0
 }
 
+let isAutoPlaying = false;
+
 document.querySelector('.js-rock').addEventListener('click',() =>{playGame('rock')});
 
 document.querySelector('.js-paper').addEventListener('click',() =>{playGame('paper')});
@@ -17,6 +19,21 @@ document.querySelector('.js-reset').addEventListener('click',() =>{
   document.querySelector('.js-option').innerHTML = '';
   document.querySelector('.js-result').innerHTML = '';
   showScore();
+});
+
+document.querySelector('.js-auto-play').addEventListener('click', () =>{
+  if(!isAutoPlaying){
+    intervalId = setInterval(() => {
+        playGame(computerOption());
+      }, 1000);
+      isAutoPlaying = true;
+      document.querySelector('.js-auto-play').innerHTML = 'Stop Playing';
+  }
+  else{
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+    document.querySelector('.js-auto-play').innerHTML = 'Auto Play';
+  }
 })
 
 showScore();
